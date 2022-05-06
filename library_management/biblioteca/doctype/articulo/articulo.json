@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:articile_name",
+ "creation": "2022-05-06 14:33:47.195592",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "articile_name",
+  "image",
+  "author",
+  "description",
+  "isbn",
+  "status",
+  "editor",
+  "column_break",
+  "section_break"
+ ],
+ "fields": [
+  {
+   "fieldname": "articile_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Articile name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "author",
+   "fieldtype": "Data",
+   "label": "Author"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "isbn",
+   "fieldtype": "Data",
+   "label": "ISBN"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Emitido\ndisponible"
+  },
+  {
+   "fieldname": "editor",
+   "fieldtype": "Data",
+   "label": "Editor"
+  },
+  {
+   "fieldname": "column_break",
+   "fieldtype": "Data",
+   "label": "Column Break"
+  },
+  {
+   "fieldname": "section_break",
+   "fieldtype": "Data",
+   "label": "Section Break"
+  }
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-05-06 17:31:07.523497",
+ "modified_by": "Administrator",
+ "module": "biblioteca",
+ "name": "Articulo",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
