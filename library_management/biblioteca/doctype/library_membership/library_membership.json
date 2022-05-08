@@ -2,20 +2,21 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "LMS.####",
- "creation": "2022-05-07 18:33:47.724846",
+ "creation": "2022-05-08 18:10:10.438808",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "library",
+  "library_member",
   "full_name",
   "from_date",
   "to_date",
-  "paid"
+  "paid",
+  "amended_from"
  ],
  "fields": [
   {
-   "fieldname": "library",
+   "fieldname": "library_member",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Library member",
@@ -23,7 +24,7 @@
    "reqd": 1
   },
   {
-   "fetch_from": "miembro_de_biblioteca.full_name",
+   "fetch_from": "library_member.full_name",
    "fieldname": "full_name",
    "fieldtype": "Data",
    "label": "Full name",
@@ -36,7 +37,7 @@
   },
   {
    "fieldname": "to_date",
-   "fieldtype": "Data",
+   "fieldtype": "Date",
    "label": "To date"
   },
   {
@@ -44,15 +45,24 @@
    "fieldname": "paid",
    "fieldtype": "Check",
    "label": "Paid"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Library Membership",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-05-07 20:21:40.388597",
+ "modified": "2022-05-08 18:39:37.579595",
  "modified_by": "Administrator",
  "module": "biblioteca",
- "name": "Membresia de biblioteca",
+ "name": "Library Membership",
  "owner": "Administrator",
  "permissions": [
   {
@@ -81,5 +91,6 @@
   }
  ],
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "title_field": "full_name"
 }

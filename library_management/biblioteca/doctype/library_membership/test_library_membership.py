@@ -4,5 +4,5 @@
 # import frappe
 import unittest
 
-class TestMembresiadebiblioteca(unittest.TestCase):
+class TestLibraryMembership(unittest.TestCase):
 	pass
