@@ -1,4 +1,5 @@
 {
+ "_assign": "[\"prueba@mail.com\", \"jrangel93@proton.me\", \"kramos@mail.com\"]",
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
@@ -12,11 +13,11 @@
   "image",
   "author",
   "description",
+  "column_break",
+  "section_break",
   "isbn",
   "status",
-  "editor",
-  "column_break",
-  "section_break"
+  "editor"
  ],
  "fields": [
   {
@@ -72,7 +73,7 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-05-06 17:31:07.523497",
+ "modified": "2022-05-06 23:39:28.860065",
  "modified_by": "Administrator",
  "module": "biblioteca",
  "name": "Articulo",
