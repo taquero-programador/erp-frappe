@@ -7,9 +7,9 @@ from frappe.model.document import Document
 
 class LibraryTransaction(Document):
 	
-	# validar membresia activa y disponibilidad del articulo
+	# metodos de validacion
 	def before_submit(self):
-		"""funcion que hace referencia a Issue de Library Trastaction"""
+		"""funcion que hace referencia a Issue de Library Trasaction"""
 
 		if self.type == 'Issue': # esto es de Library Transaction
 			self.validate_issue()
@@ -40,7 +40,7 @@ class LibraryTransaction(Document):
 		article = frappe.get_doc('Articulo', self.article)
 		if article.status == 'disponible':
 			frappe.throw('El articulo no se puede devolver sin ser solicitado!')
-
+# funcion ok
 	def validate_maximum_limit(self):
 		max_articles = frappe.db.get_single_value('Library Settings', 'max_articles')
 		count = frappe.db.count(
