@@ -11,8 +11,8 @@
  "engine": "InnoDB",
  "field_order": [
   "articile_name",
-  "image",
   "author",
+  "image",
   "description",
   "column_break",
   "section_break",
@@ -89,7 +89,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2022-05-09 12:08:14.102982",
+ "modified": "2022-05-09 13:25:13.728109",
  "modified_by": "Administrator",
  "module": "biblioteca",
  "name": "Articulo",

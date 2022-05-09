@@ -66,7 +66,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-05-09 10:35:23.895685",
+ "modified": "2022-05-09 13:19:17.452741",
  "modified_by": "Administrator",
  "module": "biblioteca",
  "name": "Library Transaction",
@@ -98,6 +98,5 @@
   }
  ],
  "sort_field": "modified",
- "sort_order": "DESC",
- "title_field": "full_name"
+ "sort_order": "DESC"
 }
