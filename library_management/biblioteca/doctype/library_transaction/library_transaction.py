@@ -9,52 +9,61 @@ class LibraryTransaction(Document):
 	
 	# validar membresia activa y disponibilidad del articulo
 	def before_submit(self):
-		if self.type == 'Emitido':
+		"""funcion que hace referencia a Issue de Library Trastaction"""
+
+		if self.type == 'Issue': # esto es de Library Transaction
 			self.validate_issue()
 			self.validate_maximum_limit()
 			article = frappe.get_doc('Articulo', self.article)
-			article.status = 'Issue'
+			article.status = 'Emitido' # debe ser igual a como se declaro en el doctype de referencia
 			article.save()
 
-		elif self.type == 'Disponible':
+		elif self.type == 'Return': # esto es de Library Transaction
 			self.validate_return()
 			article = frappe.get_doc('Articulo', self.article)
-			article.status = 'Available'
+			article.status = 'disponible' # debe ser igual a como se declaro en el doctype de referencia
 			article.save()
 
+# funcion validate_issue OK
+# la funcion hace referencia al doctype Articulo
 	def validate_issue(self):
+
 		self.validate_membership()
 		article = frappe.get_doc('Articulo', self.article)
 		if article.status == 'Emitido':
 			frappe.throw('El articulo ha sido solicitado por otro usuario')
 
+# funciona validate_return OK
 	def validate_return(self):
+
+		# hace referencia al doctype Articulo
 		article = frappe.get_doc('Articulo', self.article)
-		if article.status == 'Disponible':
-			frappe.throw('El articulo no se puede devolver sin ser solicita')
+		if article.status == 'disponible':
+			frappe.throw('El articulo no se puede devolver sin ser solicitado!')
 
 	def validate_maximum_limit(self):
-		max_articles = frappe.db,get_single_value('Library Settings', 'max_article')
+		max_articles = frappe.db.get_single_value('Library Settings', 'max_articles')
 		count = frappe.db.count(
 			'Library Transaction',
 			{
 				'library_member': self.library_member,
-				'type': 'Emitido',
+				'type': 'Issue',
 				'docstatus': 1,
 			},
 		)
 		if count >= max_articles:
-			frappe-throw('Has alanzado el limite maximo de articulos!')
+			frappe.throw('Has alanzado el limite maximo de articulos!')
 
+# funciona OK
 	def validate_membership(self):
-		validate_membership = frappe.db.exists(
+		valid_membership = frappe.db.exists(
 			'Library Membership',
 			{
 				'library_member': self.library_member,
 				'docstatus': 1,
-				'from_date': ('>', self.date),
+				'from_date': ('<', self.date),
 				'to_date': ('>', self.date),
 			},
 		)
-		if not validate_membership:
+		if not valid_membership:
 			frappe.throw('El miembro no tiene una membresia valida!')
