@@ -1,0 +1,123 @@
+{
+ "_assign": "[\"prueba@mail.com\", \"jrangel93@proton.me\", \"kramos@mail.com\"]",
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:articile_name",
+ "creation": "2022-05-06 14:33:47.195592",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "articile_name",
+  "author",
+  "image",
+  "description",
+  "column_break",
+  "section_break",
+  "isbn",
+  "status",
+  "editor",
+  "route",
+  "published"
+ ],
+ "fields": [
+  {
+   "fieldname": "articile_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Article name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "author",
+   "fieldtype": "Data",
+   "label": "Author"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "isbn",
+   "fieldtype": "Data",
+   "label": "ISBN"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Emitido\ndisponible"
+  },
+  {
+   "fieldname": "editor",
+   "fieldtype": "Data",
+   "label": "Editor"
+  },
+  {
+   "fieldname": "column_break",
+   "fieldtype": "Data",
+   "label": "Column Break"
+  },
+  {
+   "fieldname": "section_break",
+   "fieldtype": "Data",
+   "label": "Section Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  }
+ ],
+ "has_web_view": 1,
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "is_published_field": "published",
+ "links": [],
+ "modified": "2022-05-09 13:25:13.728109",
+ "modified_by": "Administrator",
+ "module": "biblioteca",
+ "name": "Articulo",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts User",
+   "share": 1
+  }
+ ],
+ "route": "articulo",
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
